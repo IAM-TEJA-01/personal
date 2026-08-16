@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Love ❤️</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(255, 80, 130, 0.25),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(255, 180, 200, 0.12),
+                    transparent 20%
+                ),
+                linear-gradient(
+                    160deg,
+                    #090008,
+                    #25000f 45%,
+                    #4a001d 70%,
+                    #100006
+                );
+        }
+
+
+        /* MOON */
+
+        .moon {
+            position: absolute;
+
+            width: 110px;
+            height: 110px;
+
+            border-radius: 50%;
+
+            top: 8%;
+            right: 12%;
+
+            background: #fff0f5;
+
+            box-shadow:
+                0 0 20px white,
+                0 0 50px rgba(255,180,210,0.6),
+                0 0 100px rgba(255,100,160,0.3);
+
+            opacity: 0.9;
+        }
+
+
+        /* STARS */
+
+        .stars span {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 7px white;
+
+            animation: twinkle 3s infinite;
+        }
+
+        .stars span:nth-child(1) {
+            left: 8%;
+            top: 15%;
+        }
+
+        .stars span:nth-child(2) {
+            left: 20%;
+            top: 28%;
+            animation-delay: 1s;
+        }
+
+        .stars span:nth-child(3) {
+            left: 35%;
+            top: 10%;
+            animation-delay: 2s;
+        }
+
+        .stars span:nth-child(4) {
+            left: 50%;
+            top: 20%;
+            animation-delay: 1.5s;
+        }
+
+        .stars span:nth-child(5) {
+            left: 65%;
+            top: 12%;
+            animation-delay: 0.5s;
+        }
+
+        .stars span:nth-child(6) {
+            left: 75%;
+            top: 38%;
+            animation-delay: 2.5s;
+        }
+
+        .stars span:nth-child(7) {
+            left: 90%;
+            top: 28%;
+            animation-delay: 1s;
+        }
+
+        .stars span:nth-child(8) {
+            left: 12%;
+            top: 65%;
+            animation-delay: 2s;
+        }
+
+        .stars span:nth-child(9) {
+            left: 85%;
+            top: 70%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes twinkle {
+
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.6);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* MAIN CONTENT */
+
+        .content {
+            position: relative;
+
+            z-index: 10;
+
+            width: 100%;
+
+            text-align: center;
+
+            padding: 20px;
+
+            animation: entrance 1.8s ease;
+        }
+
+        @keyframes entrance {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(40px)
+                    scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* HEART */
+
+        .heart {
+            font-size: 135px;
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            animation: heartbeat 1.4s infinite;
+
+            filter:
+                drop-shadow(0 0 10px #ff1744)
+                drop-shadow(0 0 30px #ff1744)
+                drop-shadow(0 0 70px rgba(255,0,80,0.7));
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+
+        /* TITLE */
+
+        h1 {
+            color: white;
+
+            font-size: 48px;
+
+            font-weight: normal;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+
+            text-shadow:
+                0 0 8px white,
+                0 0 25px #ff1744,
+                0 0 50px rgba(255,23,68,0.5);
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+            color: #ffd9e4;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+
+            text-shadow: 0 2px 5px black;
+        }
+
+
+        /* BUTTON AREA */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        /* BUTTON */
+
+        .love-button {
+            padding: 14px 32px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-family: Georgia, serif;
+
+            font-size: 17px;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            white-space: nowrap;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* YES */
+
+        #yesButton {
+            border: 1px solid rgba(255,255,255,0.7);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,30,80,0.8),
+                    rgba(120,0,40,0.8)
+                );
+
+            box-shadow:
+                0 0 15px rgba(255,30,80,0.5);
+        }
+
+        #yesButton:hover {
+            transform: translateY(-4px) scale(1.06);
+
+            box-shadow:
+                0 0 20px #ff1744,
+                0 0 45px #ff1744;
+        }
+
+
+        /* NO */
+
+        #noButton {
+            border: 1px solid rgba(255,255,255,0.5);
+
+            background: rgba(255,255,255,0.08);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+        #noButton:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+
+        /* FLOATING HEARTS */
+
+        .petal {
+            position: absolute;
+
+            bottom: -50px;
+
+            font-size: 20px;
+
+            opacity: 0;
+
+            animation:
+                petalFloat 9s linear infinite;
+
+            z-index: 2;
+
+            pointer-events: none;
+        }
+
+        @keyframes petalFloat {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.6);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    translateX(80px)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* BOTTOM GLOW */
+
+        .ground-glow {
+            position: absolute;
+
+            bottom: -180px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 700px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,0,70,0.2);
+
+            filter: blur(90px);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .moon {
+                width: 65px;
+                height: 65px;
+
+                top: 7%;
+                right: 8%;
+            }
+
+            .heart {
+                font-size: 90px;
+
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 34px;
+
+                letter-spacing: 2px;
+            }
+
+            .message {
+                font-size: 16px;
+
+                line-height: 1.6;
+
+                margin-bottom: 30px;
+            }
+
+            .buttons {
+                gap: 12px;
+            }
+
+            .love-button {
+                padding: 12px 22px;
+
+                font-size: 15px;
+            }
+        }
+
+
+        /* VERY SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            .heart {
+                font-size: 75px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .message {
+                font-size: 14px;
+            }
+
+            .love-button {
+                padding: 11px 18px;
+
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- MOON -->
+
+    <div class="moon"></div>
+
+
+    <!-- STARS -->
+
+    <div class="stars">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <!-- BOTTOM GLOW -->
+
+    <div class="ground-glow"></div>
+
+
+    <!-- MAIN -->
+
+    <div class="content">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+
+        <h1>
+            My Love
+        </h1>
+
+
+        <div class="message">
+
+            In a world full of people,
+            <br>
+
+            somehow my heart found you. ❤️
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+
+            <!-- YES -->
+
+            <a href="./symbol.html">
+
+                <button
+                    id="yesButton"
+                    class="love-button">
+
+                    Enter My Heart ❤️
+
+                </button>
+
+            </a>
+
+
+            <!-- NO -->
+
+            <button
+                id="noButton"
+                class="love-button">
+
+                No 💔
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="petal"
+         style="left:5%; animation-delay:0s;">
+        🌹
+    </div>
+
+    <div class="petal"
+         style="left:18%; animation-delay:3s;">
+        ❤️
+    </div>
+
+    <div class="petal"
+         style="left:32%; animation-delay:6s;">
+        🌸
+    </div>
+
+    <div class="petal"
+         style="left:68%; animation-delay:2s;">
+        ❤️
+    </div>
+
+    <div class="petal"
+         style="left:82%; animation-delay:5s;">
+        🌹
+    </div>
+
+    <div class="petal"
+         style="left:94%; animation-delay:1s;">
+        💕
+
+    </div>
+
+
+    <script>
+
+        const noButton =
+            document.getElementById("noButton");
+
+
+        function moveNoButton() {
+
+            const buttonWidth =
+                noButton.offsetWidth;
+
+            const buttonHeight =
+                noButton.offsetHeight;
+
+
+            /*
+             * Keep the button safely
+             * inside the screen.
+             */
+
+            const padding = 15;
+
+
+            const maxX =
+                window.innerWidth
+                - buttonWidth
+                - padding;
+
+
+            const maxY =
+                window.innerHeight
+                - buttonHeight
+                - padding;
+
+
+            const x =
+                padding +
+                Math.random() *
+                Math.max(0, maxX - padding);
+
+
+            const y =
+                padding +
+                Math.random() *
+                Math.max(0, maxY - padding);
+
+
+            noButton.style.position = "fixed";
+
+            noButton.style.left = x + "px";
+
+            noButton.style.top = y + "px";
+        }
+
+
+        /* DESKTOP */
+
+        noButton.addEventListener(
+            "mouseenter",
+            moveNoButton
+        );
+
+
+        /* MOBILE */
+
+        noButton.addEventListener(
+            "touchstart",
+            function(event) {
+
+                event.preventDefault();
+
+                moveNoButton();
+
+            },
+            { passive: false }
+        );
+
+
+        /* CLICK */
+
+        noButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                moveNoButton();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+</html>
