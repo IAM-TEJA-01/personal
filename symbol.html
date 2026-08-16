@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Love Surprise ❤️</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #52001f 0%,
+                    #25000e 40%,
+                    #090005 75%,
+                    #000 100%
+                );
+
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+
+        /* =================================
+           REALISTIC HUMAN HEART 🫀
+        ================================= */
+
+        #humanHeart {
+
+            font-size: 155px;
+
+            cursor: pointer;
+
+            user-select: none;
+
+            -webkit-user-select: none;
+
+            animation:
+                realHeartBeat 1.1s infinite;
+
+            filter:
+                drop-shadow(0 0 8px #ff1744)
+                drop-shadow(0 0 20px #ff1744)
+                drop-shadow(0 0 45px rgba(255,0,50,0.8));
+
+            transition: 0.3s;
+
+            z-index: 10;
+        }
+
+
+        #humanHeart:hover {
+
+            transform: scale(1.15);
+
+            filter:
+                drop-shadow(0 0 15px #ff1744)
+                drop-shadow(0 0 35px #ff1744)
+                drop-shadow(0 0 70px #ff1744);
+        }
+
+
+        @keyframes realHeartBeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.15);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.10);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* =================================
+           CLICK TEXT
+        ================================= */
+
+        #clickText {
+
+            position: absolute;
+
+            top: calc(50% + 115px);
+
+            color: #ffd6df;
+
+            font-size: 18px;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 0 10px #ff1744,
+                0 0 20px rgba(255,23,68,0.5);
+
+            animation:
+                glowText 2s infinite;
+
+            z-index: 10;
+        }
+
+
+        @keyframes glowText {
+
+            0%, 100% {
+                opacity: 0.45;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+        /* =================================
+           HEART EXPLOSION
+        ================================= */
+
+        .blast {
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 20;
+
+            animation:
+                explode 3s ease-out forwards;
+        }
+
+
+        @keyframes explode {
+
+            0% {
+
+                transform:
+                    translate(0,0)
+                    scale(0.2);
+
+                opacity: 1;
+            }
+
+            30% {
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translate(var(--x), var(--y))
+                    scale(2.5);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =================================
+           MESSAGE
+        ================================= */
+
+        #messageBox {
+
+            display: none;
+
+            position: absolute;
+
+            width: 90%;
+
+            max-width: 900px;
+
+            text-align: center;
+
+            color: white;
+
+            z-index: 30;
+
+            animation:
+                appear 2s ease forwards;
+        }
+
+
+        #love {
+
+            font-size: 48px;
+
+            color: #ff315c;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 10px #ff1744,
+                0 0 25px #ff1744,
+                0 0 50px #ff1744;
+        }
+
+
+        #name {
+
+            font-size: 78px;
+
+            margin-top: 10px;
+
+            color: white;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 25px #ff1744,
+                0 0 55px #ff1744;
+        }
+
+
+        #romantic {
+
+            margin-top: 25px;
+
+            font-size: 23px;
+
+            line-height: 1.7;
+
+            white-space: pre-line;
+
+            color: #ffd6df;
+
+            text-shadow:
+                0 0 10px rgba(255,80,120,0.6);
+        }
+
+
+        @keyframes appear {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.3)
+                    translateY(40px);
+            }
+
+            60% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1.05)
+                    translateY(0);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+        }
+
+
+        /* =================================
+           FLOATING HEARTS
+        ================================= */
+
+        .float {
+
+            position: absolute;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 5;
+
+            animation:
+                rise 7s linear forwards;
+        }
+
+
+        @keyframes rise {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.6);
+
+                opacity: 0;
+            }
+
+            15% {
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg)
+                    scale(1.3);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            #humanHeart {
+
+                font-size: 115px;
+            }
+
+
+            #clickText {
+
+                top: calc(50% + 90px);
+
+                font-size: 15px;
+
+                white-space: nowrap;
+            }
+
+
+            #love {
+
+                font-size: 30px;
+            }
+
+
+            #name {
+
+                font-size: 48px;
+
+                letter-spacing: 2px;
+            }
+
+
+            #romantic {
+
+                font-size: 17px;
+
+                line-height: 1.6;
+
+                padding: 0 10px;
+            }
+        }
+
+
+        /* SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            #humanHeart {
+
+                font-size: 100px;
+            }
+
+
+            #clickText {
+
+                top: calc(50% + 80px);
+
+                font-size: 14px;
+            }
+
+
+            #love {
+
+                font-size: 26px;
+            }
+
+
+            #name {
+
+                font-size: 40px;
+            }
+
+
+            #romantic {
+
+                font-size: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- REALISTIC HUMAN HEART -->
+
+    <div id="humanHeart">
+        🫀
+    </div>
+
+
+    <!-- INSTRUCTION -->
+
+    <div id="clickText">
+        Touch my heart ❤️
+    </div>
+
+
+    <!-- LOVE MESSAGE -->
+
+    <div id="messageBox">
+
+        <div id="love">
+            I LOVE YOU ❤️
+        </div>
+
+
+        <div id="name">
+            Maha ❤️
+        </div>
+
+
+        <div id="romantic">
+            You are the most beautiful part of my life.
+            Every heartbeat reminds me of you.
+            No matter the distance,
+            my heart always belongs to you. ❤️
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =================================
+           ELEMENTS
+        ================================= */
+
+        const humanHeart =
+            document.getElementById("humanHeart");
+
+        const clickText =
+            document.getElementById("clickText");
+
+        const messageBox =
+            document.getElementById("messageBox");
+
+
+        /* =================================
+           HEART TYPES
+        ================================= */
+
+        const hearts = [
+            "❤️",
+            "💖",
+            "💕",
+            "💗",
+            "💓",
+            "💘",
+            "💝"
+        ];
+
+
+        /* =================================
+           CLICK HUMAN HEART
+        ================================= */
+
+        humanHeart.addEventListener(
+            "click",
+            function () {
+
+
+                /* Hide heart */
+
+                humanHeart.style.display =
+                    "none";
+
+                clickText.style.display =
+                    "none";
+
+
+                /* =================================
+                   CREATE HEART EXPLOSION
+                ================================= */
+
+                for (
+                    let i = 0;
+                    i < 150;
+                    i++
+                ) {
+
+                    const heart =
+                        document.createElement("div");
+
+
+                    heart.className =
+                        "blast";
+
+
+                    heart.innerHTML =
+                        hearts[
+                            Math.floor(
+                                Math.random() *
+                                hearts.length
+                            )
+                        ];
+
+
+                    const x =
+                        (Math.random() - 0.5)
+                        * 1200;
+
+
+                    const y =
+                        (Math.random() - 0.5)
+                        * 800;
+
+
+                    heart.style.setProperty(
+                        "--x",
+                        x + "px"
+                    );
+
+
+                    heart.style.setProperty(
+                        "--y",
+                        y + "px"
+                    );
+
+
+                    document.body.appendChild(
+                        heart
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            heart.remove();
+
+                        },
+                        3000
+                    );
+                }
+
+
+                /* =================================
+                   SHOW LOVE MESSAGE
+                ================================= */
+
+                setTimeout(
+                    function () {
+
+                        messageBox.style.display =
+                            "block";
+
+
+                        /* =================================
+                           FLOATING HEARTS
+                        ================================= */
+
+                        setInterval(
+                            function () {
+
+                                const floatingHeart =
+                                    document.createElement(
+                                        "div"
+                                    );
+
+
+                                floatingHeart.className =
+                                    "float";
+
+
+                                floatingHeart.innerHTML =
+                                    hearts[
+                                        Math.floor(
+                                            Math.random() *
+                                            hearts.length
+                                        )
+                                    ];
+
+
+                                floatingHeart.style.left =
+                                    Math.random() * 100
+                                    + "%";
+
+
+                                document.body.appendChild(
+                                    floatingHeart
+                                );
+
+
+                                setTimeout(
+                                    function () {
+
+                                        floatingHeart.remove();
+
+                                    },
+                                    7000
+                                );
+
+                            },
+                            350
+                        );
+
+                    },
+                    3000
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
